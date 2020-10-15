@@ -14,7 +14,8 @@ class CreateTeachersTable extends Migration
     public function up()
     {
         Schema::create('teachers', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('teacher_id');
+            $table->string('name');
             $table->timestamps();
         });
     }
