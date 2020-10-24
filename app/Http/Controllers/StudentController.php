@@ -46,7 +46,9 @@ class StudentController extends Controller
      */
     public function show(Student $student)
     {
-        //
+        $student = Student::All();
+
+        return view('students')->with(compact('student'));
     }
 
     /**
@@ -82,4 +84,16 @@ class StudentController extends Controller
     {
         //
     }
+
+    public function studentsdetails(){
+        return view('studentdetails');
+    }
+
+    public function edit($id){
+        $student= Student::find(1);
+
+        return view('studentdetails','$student');
+    }
+
+
 }
