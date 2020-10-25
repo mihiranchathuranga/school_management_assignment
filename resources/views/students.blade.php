@@ -21,9 +21,9 @@
  @foreach ($student as $mailbox)  
   <tr>
    <td>{{ $mailbox->first_name }}</td>
-   <td><a href="" class="btn btn-danger">View Details</a></td>
+   <td><a href="{{url('students',$mailbox->id)}}" class="btn btn-danger">View Details</a></td>
 
-   
+
    
   </tr>
  @endforeach

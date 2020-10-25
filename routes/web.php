@@ -20,4 +20,11 @@ Route::get('students','StudentController@show');
 
 //Route::get('studentdetails','StudentController@studentsdetails');
 
-Route::get('studentsdetails','StudentController@edit');
+//Route::get('studentsdetails','StudentController@edit');
+
+/*Route::get('students/{id}', function ($id) {
+    return 'Student'.$id;
+});*/
+
+Route::get('students/{id}', 'StudentController@edit');
+  

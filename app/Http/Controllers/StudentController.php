@@ -12,6 +12,9 @@ class StudentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+      protected $primaryKey = 'student_id';
     public function index()
     {
         //
@@ -57,10 +60,13 @@ class StudentController extends Controller
      * @param  \App\Model\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function edit(Student $student)
+    /*public function edit(Student $student)
     {
-        //
-    }
+         $student= Student::find(1);
+         return view('studentdetails')->with(compact('student'));
+    }*/
+
+    
 
     /**
      * Update the specified resource in storage.
@@ -69,7 +75,20 @@ class StudentController extends Controller
      * @param  \App\Model\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Student $student)
+   /* public function update(Request $request, Student $student)
+    {
+        //
+    }*/
+
+    public function edit($id)
+    {
+        $student= Student::findorfail($id);
+         return view('studentdetails')->with(compact('student'));
+    }
+    
+
+
+     public function update(Request $request, $id)
     {
         //
     }
@@ -89,11 +108,12 @@ class StudentController extends Controller
         return view('studentdetails');
     }
 
-    public function edit($id){
+   /* public function edit($id){
         $student= Student::find(1);
 
         return view('studentdetails','$student');
-    }
+    }*/
 
 
 }
+

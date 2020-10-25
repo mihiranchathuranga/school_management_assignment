@@ -14,11 +14,11 @@ class CreateClassRoomsTable extends Migration
     public function up()
     {
         Schema::create('class_rooms', function (Blueprint $table) {
-            $table->increments('class_id');
+            $table->increments('id');
             $table->integer('student_id')->unsigned()->index();
-            $table->foreign('student_id')->references('student_id')->on('students')->onDelete('cascade');
+            $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
             $table->integer('teacher_id')->unsigned()->index();
-            $table->foreign('teacher_id')->references('teacher_id')->on('teachers')->onDelete('cascade');
+            $table->foreign('teacher_id')->references('id')->on('teachers')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -5,18 +5,21 @@
     </head>
     <body>
       <h1> Student Details</h1>
-    <form  action="GET" >
+    
+    <form  method="post" action=""  >
+        @csrf
     <div class="form-group col-md-6">
     <label for="fname">Student ID:</label><br>
-    <input type="text" id="fname" name="fname" class="form-control"  value=""><br>
+    <input type="text" id="fname" name="fname" class="form-control"  value="{{$student->id}}"><br>
     <label for="fname">First name:</label><br>
-    <input type="text" id="fname" name="fname" class="form-control"  value=""><br>
+    <input type="text" id="fname" name="fname" class="form-control"  value="{{$student->first_name}}"><br>
     <label for="lname">Last name:</label><br>
-    <input type="text" id="lname" name="lname" class="form-control"  value=""><br>
+    <input type="text" id="lname" name="lname" class="form-control"  value="{{$student->last_name}}"><br>
     <label for="lname">gender:</label><br>
-    <input type="text" id="lname" name="lname" class="form-control"  value=""><br>
+    <input type="text" id="lname" name="lname" class="form-control"  value="{{$student->gender}}"><br>
     <label for="lname">joined_year:</label><br>
-    <input type="text" id="lname" name="lname" class="form-control"  value="">
+    <input type="text" id="lname" name="lname" class="form-control"  value="{{$student->joined_year}}">
     </form>
+
     </body>
 </html>
