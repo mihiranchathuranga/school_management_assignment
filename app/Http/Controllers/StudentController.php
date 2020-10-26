@@ -85,13 +85,28 @@ class StudentController extends Controller
         $student= Student::findorfail($id);
          return view('studentdetails')->with(compact('student'));
     }
+
+    public function update(Request $request, $id)
+    {
+
+        $student = App\Student::find(1);
+
+        $student->first_name  = $request->get('first_name');
+        $student->last_name   = $request->get('last_name');
+        $student->gender      = $request->get('gender');
+        $student->joined_year = $request->get('joined_year');
+        
+        $student->save();
+
+        return redirect::to('students');
+    }
     
 
-
+/*
      public function update(Request $request, $id)
     {
-        //
-    }
+        
+    }*/
 
     /**
      * Remove the specified resource from storage.

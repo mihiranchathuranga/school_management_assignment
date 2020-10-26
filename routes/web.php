@@ -27,4 +27,6 @@ Route::get('students','StudentController@show');
 });*/
 
 Route::get('students/{id}', 'StudentController@edit');
+
+Route::post('studentsdetails','StudentController@update');
   

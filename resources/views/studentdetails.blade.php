@@ -6,7 +6,7 @@
     <body>
       <h1> Student Details</h1>
     
-    <form  method="post" action=""  >
+    <form  method="post"  action="{{ action('StudentController@update') }}"  >
         @csrf
     <div class="form-group col-md-6">
     <label for="fname">Student ID:</label><br>
@@ -19,6 +19,7 @@
     <input type="text" id="lname" name="lname" class="form-control"  value="{{$student->gender}}"><br>
     <label for="lname">joined_year:</label><br>
     <input type="text" id="lname" name="lname" class="form-control"  value="{{$student->joined_year}}">
+    <button type = "submit">Submit</button>
     </form>
 
     </body>
